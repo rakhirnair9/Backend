@@ -169,7 +169,6 @@
     <Compile Include="BAL\StarWarService.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StarWarsController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\DBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

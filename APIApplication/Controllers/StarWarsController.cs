@@ -60,8 +60,6 @@ namespace APIApplication.Controllers
         {
             try
             {
-                //var filmcharacters = StarWarService.GetMostSpeciesInFilms();
-                //return Ok(filmcharacters);
                 return Ok();
             }
             catch (Exception ex)
