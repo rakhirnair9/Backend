@@ -1,0 +1,440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="films">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="director" Type="nvarchar(max)" />
+    <Property Name="edited" Type="datetime" />
+    <Property Name="episode_id" Type="int" />
+    <Property Name="opening_crawl" Type="nvarchar(max)" />
+    <Property Name="producer" Type="nvarchar(max)" />
+    <Property Name="release_date" Type="datetime" />
+    <Property Name="title" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="films_characters">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="people_id" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="people_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="films_planets">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="planet_id" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="planet_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="films_species">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="species_id" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="species_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="films_starships">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="starship_id" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="starship_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="films_vehicles">
+    <Key>
+      <PropertyRef Name="film_id" />
+      <PropertyRef Name="vehicle_id" />
+    </Key>
+    <Property Name="film_id" Type="int" Nullable="false" />
+    <Property Name="vehicle_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="people">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="birth_year" Type="nvarchar(max)" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="edited" Type="datetime" />
+    <Property Name="eye_color" Type="nvarchar(max)" />
+    <Property Name="gender" Type="nvarchar(max)" />
+    <Property Name="hair_color" Type="nvarchar(max)" />
+    <Property Name="height" Type="nvarchar(max)" />
+    <Property Name="homeworld" Type="int" />
+    <Property Name="mass" Type="nvarchar(max)" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="skin_color" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="planets">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="climate" Type="nvarchar(max)" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="diameter" Type="nvarchar(max)" />
+    <Property Name="edited" Type="datetime" />
+    <Property Name="gravity" Type="nvarchar(max)" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="orbital_period" Type="nvarchar(max)" />
+    <Property Name="population" Type="nvarchar(max)" />
+    <Property Name="rotation_period" Type="nvarchar(max)" />
+    <Property Name="surface_water" Type="nvarchar(max)" />
+    <Property Name="terrain" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="species">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="average_height" Type="nvarchar(max)" />
+    <Property Name="average_lifespan" Type="nvarchar(max)" />
+    <Property Name="classification" Type="nvarchar(max)" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="edited" Type="datetime" />
+    <Property Name="eye_colors" Type="nvarchar(max)" />
+    <Property Name="hair_colors" Type="nvarchar(max)" />
+    <Property Name="homeworld" Type="int" />
+    <Property Name="language" Type="nvarchar(max)" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="skin_colors" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="species_people">
+    <Key>
+      <PropertyRef Name="species_id" />
+      <PropertyRef Name="people_id" />
+    </Key>
+    <Property Name="species_id" Type="int" Nullable="false" />
+    <Property Name="people_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="starships">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="MGLT" Type="nvarchar(max)" />
+    <Property Name="hyperdrive_rating" Type="nvarchar(max)" />
+    <Property Name="starship_class" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="starships_pilots">
+    <Key>
+      <PropertyRef Name="starship_id" />
+      <PropertyRef Name="people_id" />
+    </Key>
+    <Property Name="starship_id" Type="int" Nullable="false" />
+    <Property Name="people_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="transports">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="cargo_capacity" Type="nvarchar(max)" />
+    <Property Name="consumables" Type="nvarchar(max)" />
+    <Property Name="cost_in_credits" Type="nvarchar(max)" />
+    <Property Name="created" Type="datetime" />
+    <Property Name="crew" Type="nvarchar(max)" />
+    <Property Name="edited" Type="datetime" />
+    <Property Name="length" Type="nvarchar(max)" />
+    <Property Name="manufacturer" Type="nvarchar(max)" />
+    <Property Name="max_atmosphering_speed" Type="nvarchar(max)" />
+    <Property Name="model" Type="nvarchar(max)" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="passengers" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="vehicles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="vehicle_class" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="vehicles_pilots">
+    <Key>
+      <PropertyRef Name="vehicle_id" />
+      <PropertyRef Name="people_id" />
+    </Key>
+    <Property Name="vehicle_id" Type="int" Nullable="false" />
+    <Property Name="people_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="s3t_characters_films_0">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_characters" Type="Self.films_characters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_characters">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_characters_films_1">
+    <End Role="people" Type="Self.people" Multiplicity="1" />
+    <End Role="films_characters" Type="Self.films_characters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="people">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_characters">
+        <PropertyRef Name="people_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_planets_films_0">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_planets" Type="Self.films_planets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_planets">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_planets_films_1">
+    <End Role="planets" Type="Self.planets" Multiplicity="1" />
+    <End Role="films_planets" Type="Self.films_planets" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="planets">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_planets">
+        <PropertyRef Name="planet_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_species_films_0">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_species" Type="Self.films_species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_species">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_species_films_1">
+    <End Role="species" Type="Self.species" Multiplicity="1" />
+    <End Role="films_species" Type="Self.films_species" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="species">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_species">
+        <PropertyRef Name="species_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_starships_films_0">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_starships" Type="Self.films_starships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_starships">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_starships_films_1">
+    <End Role="starships" Type="Self.starships" Multiplicity="1" />
+    <End Role="films_starships" Type="Self.films_starships" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="starships">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_starships">
+        <PropertyRef Name="starship_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_vehicles_films_0">
+    <End Role="films" Type="Self.films" Multiplicity="1" />
+    <End Role="films_vehicles" Type="Self.films_vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="films">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_vehicles">
+        <PropertyRef Name="film_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_films_vehicles_films_1">
+    <End Role="vehicles" Type="Self.vehicles" Multiplicity="1" />
+    <End Role="films_vehicles" Type="Self.films_vehicles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehicles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="films_vehicles">
+        <PropertyRef Name="vehicle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_species_people_species_0">
+    <End Role="species" Type="Self.species" Multiplicity="1" />
+    <End Role="species_people" Type="Self.species_people" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="species">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="species_people">
+        <PropertyRef Name="species_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_species_people_species_1">
+    <End Role="people" Type="Self.people" Multiplicity="1" />
+    <End Role="species_people" Type="Self.species_people" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="people">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="species_people">
+        <PropertyRef Name="people_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_starships_pilots_starships_0">
+    <End Role="starships" Type="Self.starships" Multiplicity="1" />
+    <End Role="starships_pilots" Type="Self.starships_pilots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="starships">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="starships_pilots">
+        <PropertyRef Name="starship_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_starships_pilots_starships_1">
+    <End Role="people" Type="Self.people" Multiplicity="1" />
+    <End Role="starships_pilots" Type="Self.starships_pilots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="people">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="starships_pilots">
+        <PropertyRef Name="people_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_veehicles_pilots_vehicles_0">
+    <End Role="vehicles" Type="Self.vehicles" Multiplicity="1" />
+    <End Role="vehicles_pilots" Type="Self.vehicles_pilots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehicles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vehicles_pilots">
+        <PropertyRef Name="vehicle_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="s3t_veehicles_pilots_vehicles_1">
+    <End Role="people" Type="Self.people" Multiplicity="1" />
+    <End Role="vehicles_pilots" Type="Self.vehicles_pilots" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="people">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="vehicles_pilots">
+        <PropertyRef Name="people_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="films" EntityType="Self.films" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films_characters" EntityType="Self.films_characters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films_planets" EntityType="Self.films_planets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films_species" EntityType="Self.films_species" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films_starships" EntityType="Self.films_starships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="films_vehicles" EntityType="Self.films_vehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="people" EntityType="Self.people" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="planets" EntityType="Self.planets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="species" EntityType="Self.species" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="species_people" EntityType="Self.species_people" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="starships" EntityType="Self.starships" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="starships_pilots" EntityType="Self.starships_pilots" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transports" EntityType="Self.transports" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vehicles" EntityType="Self.vehicles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vehicles_pilots" EntityType="Self.vehicles_pilots" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="s3t_characters_films_0" Association="Self.s3t_characters_films_0">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_characters" EntitySet="films_characters" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_characters_films_1" Association="Self.s3t_characters_films_1">
+      <End Role="people" EntitySet="people" />
+      <End Role="films_characters" EntitySet="films_characters" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_planets_films_0" Association="Self.s3t_films_planets_films_0">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_planets" EntitySet="films_planets" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_planets_films_1" Association="Self.s3t_films_planets_films_1">
+      <End Role="planets" EntitySet="planets" />
+      <End Role="films_planets" EntitySet="films_planets" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_species_films_0" Association="Self.s3t_films_species_films_0">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_species" EntitySet="films_species" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_species_films_1" Association="Self.s3t_films_species_films_1">
+      <End Role="species" EntitySet="species" />
+      <End Role="films_species" EntitySet="films_species" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_starships_films_0" Association="Self.s3t_films_starships_films_0">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_starships" EntitySet="films_starships" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_starships_films_1" Association="Self.s3t_films_starships_films_1">
+      <End Role="starships" EntitySet="starships" />
+      <End Role="films_starships" EntitySet="films_starships" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_vehicles_films_0" Association="Self.s3t_films_vehicles_films_0">
+      <End Role="films" EntitySet="films" />
+      <End Role="films_vehicles" EntitySet="films_vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_films_vehicles_films_1" Association="Self.s3t_films_vehicles_films_1">
+      <End Role="vehicles" EntitySet="vehicles" />
+      <End Role="films_vehicles" EntitySet="films_vehicles" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_species_people_species_0" Association="Self.s3t_species_people_species_0">
+      <End Role="species" EntitySet="species" />
+      <End Role="species_people" EntitySet="species_people" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_species_people_species_1" Association="Self.s3t_species_people_species_1">
+      <End Role="people" EntitySet="people" />
+      <End Role="species_people" EntitySet="species_people" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_starships_pilots_starships_0" Association="Self.s3t_starships_pilots_starships_0">
+      <End Role="starships" EntitySet="starships" />
+      <End Role="starships_pilots" EntitySet="starships_pilots" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_starships_pilots_starships_1" Association="Self.s3t_starships_pilots_starships_1">
+      <End Role="people" EntitySet="people" />
+      <End Role="starships_pilots" EntitySet="starships_pilots" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_veehicles_pilots_vehicles_0" Association="Self.s3t_veehicles_pilots_vehicles_0">
+      <End Role="vehicles" EntitySet="vehicles" />
+      <End Role="vehicles_pilots" EntitySet="vehicles_pilots" />
+    </AssociationSet>
+    <AssociationSet Name="s3t_veehicles_pilots_vehicles_1" Association="Self.s3t_veehicles_pilots_vehicles_1">
+      <End Role="people" EntitySet="people" />
+      <End Role="vehicles_pilots" EntitySet="vehicles_pilots" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

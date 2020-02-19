@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="films">
+      <EntityTypeMapping TypeName="Model.film">
+        <MappingFragment StoreEntitySet="films">
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="release_date" ColumnName="release_date" />
+          <ScalarProperty Name="producer" ColumnName="producer" />
+          <ScalarProperty Name="opening_crawl" ColumnName="opening_crawl" />
+          <ScalarProperty Name="episode_id" ColumnName="episode_id" />
+          <ScalarProperty Name="edited" ColumnName="edited" />
+          <ScalarProperty Name="director" ColumnName="director" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="people">
+      <EntityTypeMapping TypeName="Model.person">
+        <MappingFragment StoreEntitySet="people">
+          <ScalarProperty Name="skin_color" ColumnName="skin_color" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mass" ColumnName="mass" />
+          <ScalarProperty Name="homeworld" ColumnName="homeworld" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="hair_color" ColumnName="hair_color" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="eye_color" ColumnName="eye_color" />
+          <ScalarProperty Name="edited" ColumnName="edited" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="birth_year" ColumnName="birth_year" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="planets">
+      <EntityTypeMapping TypeName="Model.planet">
+        <MappingFragment StoreEntitySet="planets">
+          <ScalarProperty Name="terrain" ColumnName="terrain" />
+          <ScalarProperty Name="surface_water" ColumnName="surface_water" />
+          <ScalarProperty Name="rotation_period" ColumnName="rotation_period" />
+          <ScalarProperty Name="population" ColumnName="population" />
+          <ScalarProperty Name="orbital_period" ColumnName="orbital_period" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="gravity" ColumnName="gravity" />
+          <ScalarProperty Name="edited" ColumnName="edited" />
+          <ScalarProperty Name="diameter" ColumnName="diameter" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="climate" ColumnName="climate" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="species">
+      <EntityTypeMapping TypeName="Model.species">
+        <MappingFragment StoreEntitySet="species">
+          <ScalarProperty Name="skin_colors" ColumnName="skin_colors" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="language" ColumnName="language" />
+          <ScalarProperty Name="homeworld" ColumnName="homeworld" />
+          <ScalarProperty Name="hair_colors" ColumnName="hair_colors" />
+          <ScalarProperty Name="eye_colors" ColumnName="eye_colors" />
+          <ScalarProperty Name="edited" ColumnName="edited" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="classification" ColumnName="classification" />
+          <ScalarProperty Name="average_lifespan" ColumnName="average_lifespan" />
+          <ScalarProperty Name="average_height" ColumnName="average_height" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="starships">
+      <EntityTypeMapping TypeName="Model.starship">
+        <MappingFragment StoreEntitySet="starships">
+          <ScalarProperty Name="starship_class" ColumnName="starship_class" />
+          <ScalarProperty Name="hyperdrive_rating" ColumnName="hyperdrive_rating" />
+          <ScalarProperty Name="MGLT" ColumnName="MGLT" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transports">
+      <EntityTypeMapping TypeName="Model.transport">
+        <MappingFragment StoreEntitySet="transports">
+          <ScalarProperty Name="passengers" ColumnName="passengers" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="max_atmosphering_speed" ColumnName="max_atmosphering_speed" />
+          <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="edited" ColumnName="edited" />
+          <ScalarProperty Name="crew" ColumnName="crew" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="cost_in_credits" ColumnName="cost_in_credits" />
+          <ScalarProperty Name="consumables" ColumnName="consumables" />
+          <ScalarProperty Name="cargo_capacity" ColumnName="cargo_capacity" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehicles">
+      <EntityTypeMapping TypeName="Model.vehicle">
+        <MappingFragment StoreEntitySet="vehicles">
+          <ScalarProperty Name="vehicle_class" ColumnName="vehicle_class" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="films_characters1" TypeName="Model.films_characters1" StoreEntitySet="films_characters">
+      <EndProperty Name="person">
+        <ScalarProperty Name="id" ColumnName="people_id" />
+      </EndProperty>
+      <EndProperty Name="film">
+        <ScalarProperty Name="id" ColumnName="film_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="films_planets1" TypeName="Model.films_planets1" StoreEntitySet="films_planets">
+      <EndProperty Name="planet">
+        <ScalarProperty Name="id" ColumnName="planet_id" />
+      </EndProperty>
+      <EndProperty Name="film">
+        <ScalarProperty Name="id" ColumnName="film_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="films_species1" TypeName="Model.films_species1" StoreEntitySet="films_species">
+      <EndProperty Name="species">
+        <ScalarProperty Name="id" ColumnName="species_id" />
+      </EndProperty>
+      <EndProperty Name="film">
+        <ScalarProperty Name="id" ColumnName="film_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="films_starships1" TypeName="Model.films_starships1" StoreEntitySet="films_starships">
+      <EndProperty Name="starship">
+        <ScalarProperty Name="id" ColumnName="starship_id" />
+      </EndProperty>
+      <EndProperty Name="film">
+        <ScalarProperty Name="id" ColumnName="film_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="films_vehicles1" TypeName="Model.films_vehicles1" StoreEntitySet="films_vehicles">
+      <EndProperty Name="vehicle">
+        <ScalarProperty Name="id" ColumnName="vehicle_id" />
+      </EndProperty>
+      <EndProperty Name="film">
+        <ScalarProperty Name="id" ColumnName="film_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="species_people1" TypeName="Model.species_people1" StoreEntitySet="species_people">
+      <EndProperty Name="person">
+        <ScalarProperty Name="id" ColumnName="people_id" />
+      </EndProperty>
+      <EndProperty Name="species">
+        <ScalarProperty Name="id" ColumnName="species_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="starships_pilots1" TypeName="Model.starships_pilots1" StoreEntitySet="starships_pilots">
+      <EndProperty Name="person">
+        <ScalarProperty Name="id" ColumnName="people_id" />
+      </EndProperty>
+      <EndProperty Name="starship">
+        <ScalarProperty Name="id" ColumnName="starship_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="vehicles_pilots1" TypeName="Model.vehicles_pilots1" StoreEntitySet="vehicles_pilots">
+      <EndProperty Name="person">
+        <ScalarProperty Name="id" ColumnName="people_id" />
+      </EndProperty>
+      <EndProperty Name="vehicle">
+        <ScalarProperty Name="id" ColumnName="vehicle_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
